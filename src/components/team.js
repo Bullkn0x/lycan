@@ -17,7 +17,7 @@ class Team extends Component {
               <h4>Steven Forkosh</h4>
               <p>Chief Executive Officer</p>
               <div className="team-social-icons">
-                <a href=""><i className="fa fa-linkedin-square"/></a>
+                <a href="https://www.linkedin.com/in/steven-forkosh-9ba1b753"><i className="fa fa-linkedin-square"/></a>
                 <a href=""><i className="fa fa-envelope-square"/></a>
               </div>
             </div>
@@ -28,7 +28,7 @@ class Team extends Component {
               <h4>Rich Duchin</h4>
               <p>Chief Technology Officer</p>
               <div className="team-social-icons">
-                <a href=""><i className="fa fa-linkedin-square"/></a>
+                <a href="https://www.linkedin.com/in/richard-duchin-051082136"><i className="fa fa-linkedin-square"/></a>
                 <a href=""><i className="fa fa-envelope-square"/></a>
               </div>
             </div>
@@ -37,9 +37,9 @@ class Team extends Component {
             <div className="team">
               <img className="img-responsive_center-block" src={Lester} alt={3}/>
               <h4>Lester Loor</h4>
-              <p>Developer</p>
+              <p>Senior Developer</p>
               <div className="team-social-icons">
-                <a href=""><i className="fa fa-linkedin-square"/></a>
+                <a href="https://www.linkedin.com/in/lester-loor-915466110"><i className="fa fa-linkedin-square"/></a>
                 <a href=""><i className="fa fa-envelope-square"/></a>
               </div>
             </div>
