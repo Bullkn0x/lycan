@@ -32,7 +32,8 @@ class App extends Component {
   render() {
     console.log("user authenticated from appjs", this.state);
     return (
-      {this.state.loggedin ?
+
+        <div>
         <div>
           {this.state.loggedin ?
             // if user is logged in set routes for Dashboard
@@ -56,8 +57,8 @@ class App extends Component {
 
           }
         </div>
-        :
-        <div>
+
+        {/* <div>
           {this.state.loggedin ?
             // if user is logged in set routes for Dashboard
               <div>
@@ -79,9 +80,10 @@ class App extends Component {
               </div>
 
           }
+        </div> */}
         </div>
 
-      }
+
 
 
 

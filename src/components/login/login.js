@@ -1,7 +1,6 @@
 import React, {Component, StyleSheet} from 'react';
-import SplashNavbar from "../navbars/loginNav.js"
 import fire from "../../config/config.js";
-
+import SplashNavbar from "../navbars/splashNavbar"
 const errorMessage = {
   fontSize: "14px",
   color: "red",
@@ -125,7 +124,8 @@ class Login extends Component {
         </div>
       </div>
 
-    </div>);
+    </div>
+  );
   }
 }
 
