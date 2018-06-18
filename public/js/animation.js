@@ -2,8 +2,8 @@ $(document).ready(function() {
   $('#parallax').parallax({
     invertX: true,
     invertY: true,
-    scalarX: 3,
-    scalarY: 4,
+    // scalarX: 3,
+    // scalarY: 4,
     frictionY: .1
   });
 

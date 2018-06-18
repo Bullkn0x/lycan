@@ -530,14 +530,18 @@ Fun Facts Style
 }
 #fun-facts .number {
   color: #fff;
+  font-size: 40px;
   font-weight: 700;
   padding: 10px 0;
   margin: 0;
 }
-#fun-facts span {
-  font-size: 48px;
+#fun-facts .dollar {
+  font-size: 40px;
   color: #fff;
-  margin-bottom: 15px;
+}
+#fun-facts .units {
+  font-size: 28px;
+  color: #fff;
 }
 
     /* ==========================================================================

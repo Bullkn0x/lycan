@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+
+
 class Facts extends Component {
   render() {
     return (
@@ -7,28 +9,30 @@ class Facts extends Component {
 
       <section id="fun-facts">
   <div className="container">
-    <h2>Some Fun Facts </h2>
+    <h2>Project Milestones</h2>
     <hr className="light-sep" />
-    <p>Fun Facts</p>
     <div className="row wow fadeInUp" data-wow-delay=".3s">
       <div className="col-lg-3">
         <span className="icon-happy" />
-        <h2 className="number timer">367</h2>
-        <h4>Happy Clients</h4>
+        <span className="number timer">367</span>
+        <h4>Number of Users</h4>
       </div>
       <div className="col-lg-3">
         <span className="icon-trophy" />
-        <h2 className="number timer">150</h2>
-        <h4>Project Done</h4>
+        <span className="dollar">$</span>
+        <span className="number timer">130</span>
+        <span className= "units">M</span>
+        <h4>Capital Raised</h4>
       </div>
       <div className="col-lg-3">
         <span className="icon-wine" />
-        <h2 className="number timer">121</h2>
-        <h4>Glass Of Wine</h4>
+        <span className="number timer">120</span>
+        <span className="units"> DAYS</span>
+        <h4>Beta Launch</h4>
       </div>
       <div className="col-lg-3">
         <span className="icon-documents" />
-        <h2 className="number timer">10000</h2>
+        <span className="number timer">5245</span>
         <h4>Lines Of Code</h4>
       </div>
     </div>
