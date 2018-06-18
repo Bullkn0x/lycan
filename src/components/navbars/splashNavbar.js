@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import fire from "../config/config";
-class Navbar extends Component {
+import fire from "../../config/config";
+class SplashNavbar extends Component {
 
 logout(){
   fire.auth().signOut().then(function() {
@@ -40,15 +40,11 @@ logout(){
               <li>
                 <a href="#contact" className="page-scroll">Contact</a>
               </li>
-              {this.props.loggedInUserData == null ?
+
               <li>
-                <a href="/login">Login</a>
+                <a href="/login">Sign In</a>
               </li>
-              :
-              <li>
-                <a onClick={this.logout.bind(this)} href="/">Logout</a>
-              </li>
-            }
+
             </ul>
           </div>
           <div className="social-media hidden-sm hidden-xs">
@@ -70,4 +66,4 @@ logout(){
   }
 }
 
-export default Navbar;
+export default SplashNavbar;

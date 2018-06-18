@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Navbar from "./navbar"
+import SplashNavbar from "./navbars/splashNavbar.js"
 import logo from "../images/logo.png"
 class Header extends Component {
   render() {
-    
+
     return (
 
       <section className="main-header">
-      <Navbar loggedInUserData={this.props.loggedInUserData}/>
+      <SplashNavbar loggedInUserData={this.props.loggedInUserData}/>
         <div id="owl-hero" className="owl-carousel owl-theme">
           <div className="item">
             {/* <div className="caption"> */}

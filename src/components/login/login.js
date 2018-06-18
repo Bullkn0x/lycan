@@ -1,5 +1,5 @@
 import React, {Component, StyleSheet} from 'react';
-import Navbar from "../../components/navbar.js"
+import SplashNavbar from "../navbars/loginNav.js"
 import fire from "../../config/config.js";
 
 const errorMessage = {
@@ -49,18 +49,27 @@ class Login extends Component {
       this.setState({errorCode: error.code, errorMessage: error.message})
     })
   }
+  login(e) {
+    e.preventDefault();
+    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(response => {
+      console.log("login ", response);
+
+
+    }).catch(error => {
+      console.log(error);
+      this.setState({errorCode: error.code, errorMessage: error.message})
+    })
+  }
   render() {
     console.log("state", this.state);
-    return (<div className="LoginContainer">
-      {/* Header============================================= */}
-      <Navbar/>
-
+    console.log("log in props", this.props.loggedInUserData);
+    return (
+      <div className="LoginContainer">
+      <SplashNavbar/>
       <div className="veen">
-        <div className={this.state.move === ""
-            ? "wrapper"
-            : "wrapper move"}>
+        <div className={this.state.move === "" ? "wrapper" : "wrapper move"}>
           <div id="login">
-            <h3>Login</h3>
+            <h3>Please Login</h3>
             <div className="mail">
               <input onChange={this.setInputValue.bind(this)} value={this.state.email} type="email" name="email"/>
               <label>Email</label>
@@ -70,13 +79,13 @@ class Login extends Component {
               <label>Password</label>
             </div>
             <div className="submit">
-              <button className="login">Login</button>
+              <button onClick={this.login.bind(this)} className="login">Login</button>
             </div>
             <a className="forgot" href="#">Forgot your password?</a>
             <button onClick={this.addClassMove.bind(this)} id="loginbtn">Don`t have an account?</button>
           </div>
           <div id="register">
-            <h3>Register</h3>
+            <h3>Please Register</h3>
             <div className="name">
               <input type="text" onChange={this.setInputValue.bind(this)} value={this.state.firstname} name="firstname"/>
               <label>First Name</label>
