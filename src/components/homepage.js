@@ -21,7 +21,7 @@ class Homepage extends Component {
       <div>
 
       {/* Header============================================= */}
-        <Header loggedInUserData={this.props.loggedInUserData} />
+        <Header />
       {/* Welcome============================================= */}
         <Welcome/>
       {/* Services============================================= */}

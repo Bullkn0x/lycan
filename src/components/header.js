@@ -7,14 +7,14 @@ class Header extends Component {
     return (
 
       <section className="main-header">
-      <SplashNavbar loggedInUserData={this.props.loggedInUserData}/>
+      <SplashNavbar/>
         <div id="owl-hero" className="owl-carousel owl-theme">
           <div className="item">
             {/* <div className="caption"> */}
               <div id="parallax">
     <div className="layer" data-depth="0.6">
       <div className="some-space">
-    <img alt="" className="imgLogo" src={logo} alt=""/>
+    <img alt="" className="imgLogo" src={logo} />
      <p>Crypto Automated <br />Let us handle your trades</p>
       </div>
     </div>

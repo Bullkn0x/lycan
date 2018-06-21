@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 import fire from "../../config/config";
 class SplashNavbar extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      "user": {},
+      loggedin: false,
+      isLoading: false
+      }
+    }
 logout(){
   fire.auth().signOut().then(function() {
   // Sign-out successful.
@@ -9,8 +16,24 @@ logout(){
   // An error happened.
 });
 }
+componentDidMount(){
+  let self = this
+  fire.auth().onAuthStateChanged(function(user) {
+    if(user == null){
+      self.setState({"user": {},  loggedin: false, isLoading:false});
+    }else{
+      self.setState({"user": user,  loggedin: true,isLoading:false});
+    }
+
+  })
+}
   render() {
-    console.log("props in navbar", this.props.loggedInUserData);
+    // console.log("user in navbar", this.state.user);
+    if(this.state.user === "{}"){
+      // console.log("user not there");
+    }else{
+      // console.log("user there");
+    }
     return (<nav className="navbar navbar-default navbar-fixed-top">
       <div className="container">
         <div className="navbar-header">
@@ -40,10 +63,15 @@ logout(){
               <li>
                 <a href="#contact" className="page-scroll">Contact</a>
               </li>
-
+              {this.state.user === {} ?
               <li>
                 <a href="/login">Sign In</a>
               </li>
+              :
+              null
+
+              }
+
 
             </ul>
           </div>

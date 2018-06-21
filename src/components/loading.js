@@ -1,4 +1,4 @@
-import React, {Component, StyleSheet} from 'react';
+import React, {Component} from 'react';
 
 class Loading extends Component {
 

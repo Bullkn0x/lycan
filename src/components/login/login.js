@@ -1,4 +1,4 @@
-import React, {Component, StyleSheet} from 'react';
+import React, {Component} from 'react';
 import fire from "../../config/config.js";
 import SplashNavbar from "../navbars/splashNavbar"
 const errorMessage = {
@@ -10,12 +10,24 @@ class Login extends Component {
   constructor() {
     super()
     this.state = {
+      user: {},
       move: "",
       email: "",
       errorcode: "",
       firstname: "",
       lastname: ""
     }
+  }
+  componentWillMount(){
+    let self = this
+    fire.auth().onAuthStateChanged(function(user) {
+      if(user == null){
+        console.log("props for user",user)
+      }else{
+        self.props.history.push('/dashboard')
+      }
+    })
+
   }
   addClassMove() {
     this.setState({move: "move"})
@@ -42,7 +54,7 @@ class Login extends Component {
         lastname: this.state.lastname
       };
       userDatabase.push(userInfo);
-
+      this.props.history.push('/dashboard')
     }).catch(error => {
       console.log(error);
       this.setState({errorCode: error.code, errorMessage: error.message})
@@ -52,7 +64,7 @@ class Login extends Component {
     e.preventDefault();
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(response => {
       console.log("login ", response);
-
+      this.props.history.push('/dashboard')
 
     }).catch(error => {
       console.log(error);
@@ -60,8 +72,9 @@ class Login extends Component {
     })
   }
   render() {
-    console.log("state", this.state);
-    console.log("log in props", this.props.loggedInUserData);
+    console.log("this is your log in user state", this.state.user);
+    // console.log("log in props", this.props.loggedInUserData);
+    // {this.props.loggedInUserData.user == null ? <div>{alert("null login user")}</div> : <div>{alert("not null login user")}</div>}
     return (
       <div className="LoginContainer">
       <SplashNavbar/>
@@ -80,7 +93,7 @@ class Login extends Component {
             <div className="submit">
               <button onClick={this.login.bind(this)} className="login">Login</button>
             </div>
-            <a className="forgot" href="#">Forgot your password?</a>
+            <a className="forgot" href="">Forgot your password?</a>
             <button onClick={this.addClassMove.bind(this)} id="loginbtn">Don`t have an account?</button>
           </div>
           <div id="register">
